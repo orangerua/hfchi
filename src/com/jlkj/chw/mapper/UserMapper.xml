@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlkj.chw.dao.UserDao">
+<select id="selectUserByUserName" parameterType="User" resultType="int">
+select count(1) from t_user where username=#{userName}
+</select>
+<insert id="insertUser" parameterType="User">
+insert into t_user(username,password) values(#{userName},#{password})
+</insert>
+<select id="selectUser" parameterType="User" resultType="User">
+select userid,username,password from t_user where username=#{userName} and password=#{password}
+</select>
+<update id="updateHead" parameterType="User">
+update t_user set head=#{head} where userid=#{userId}
+
+</update>
+</mapper>
