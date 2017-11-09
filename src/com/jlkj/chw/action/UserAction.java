@@ -118,7 +118,7 @@ public class UserAction extends ActionSupport implements SessionAware {
 			
 		}
 		
-		return null;
+		return "msg";
 	}
 
 	public String phoneRegister() {
